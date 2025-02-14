@@ -16,12 +16,12 @@ for (int i = 1; i < Math.Sqrt(num); i++)
     }
 }
 
-using (StreamReader stream = new StreamReader($"{DIR}\\szamok.txt"))
+using (StreamReader reader = new StreamReader($"{DIR}\\szamok.txt"))
 {
-    while (!stream.EndOfStream)
+    while (!reader.EndOfStream)
     {
 
-        long line = long.Parse(stream.ReadLine());
+        long line = long.Parse(reader.ReadLine());
         int counter = 0;
 
         for (long i = 1; i <= Math.Sqrt(line); i++)
@@ -61,11 +61,11 @@ int annagrams = 0;
 
 List<string> duplicates = [];
 
-using (StreamReader sr = new($"{DIR}\\szamok.txt"))
+using (StreamReader reader = new($"{DIR}\\szamok.txt"))
 {
-    while (!sr.EndOfStream)
+    while (!reader.EndOfStream)
     {
-        string line = sr.ReadLine();
+        string line = reader.ReadLine();
 
         if (duplicates.ToHashSet<string>().Contains(line))
         {
