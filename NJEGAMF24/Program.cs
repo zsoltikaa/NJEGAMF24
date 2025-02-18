@@ -1,4 +1,8 @@
-﻿const string DIR = "H:\\c#\\cli\\NJEGAMF24\\";
+﻿Console.ForegroundColor = ConsoleColor.Green;
+
+const string DIR = "H:\\c#\\cli\\NJEGAMF24\\";
+
+Console.WriteLine("1. feladat: ");
 
 // 1. task (a part) ------------------------------------------------------------------------------------------------------------------------------------
 
@@ -164,3 +168,46 @@ for (int i = 0; i < frequency.Length; i++)
 
 // output the most frequent two-digit number
 Console.WriteLine($"C rész: {mostFrequent}");
+
+Console.WriteLine("\n----------------------------------------------------------------------------------\n");
+
+// 2. task (a part) ------------------------------------------------------------------------------------------------------------------------------------
+
+Console.WriteLine("2. feladat: ");
+
+List<Varos> varosok = [];
+List<Megye> megyek = [];
+
+
+using (StreamReader sr = new($"{DIR}telepules.txt"))
+{
+
+    while (!sr.EndOfStream)
+    {
+
+        varosok.Add(new(sr.ReadLine()));
+
+    }
+
+}
+
+using (StreamReader sr = new($"{DIR}megyek.txt"))
+{
+
+    while (!sr.EndOfStream)
+    {
+
+        megyek.Add(new(sr.ReadLine()));
+
+    }
+
+}
+
+var f1 = varosok.GroupBy(v => v.Megye).OrderBy(g => g.Sum(v => v.Lakossag)).Skip(1).FirstOrDefault();
+var megye = megyek.Where(m => m.MegyeKod.Equals(f1.Key)).FirstOrDefault();
+Console.WriteLine($"A rész: {megye.MegyeNev}-{f1.Sum(l => l.Lakossag)}");
+
+// 2. task (b part) ------------------------------------------------------------------------------------------------------------------------------------
+
+var f2 = varosok.OrderByDescending(v => v.Szelesseg).FirstOrDefault();
+Console.WriteLine($"B rész: {f2.Telepules}");
