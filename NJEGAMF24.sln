@@ -7,6 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NJEGAMF24_1_fordulo", "NJEG
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B963F817-FDF5-4351-B334-E71F6E4DBF08}"
 	ProjectSection(SolutionItems) = preProject
+		jatszmak.txt = jatszmak.txt
 		megyek.txt = megyek.txt
 		szamok.txt = szamok.txt
 		telepules.txt = telepules.txt
