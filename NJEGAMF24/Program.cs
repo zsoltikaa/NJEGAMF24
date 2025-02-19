@@ -211,3 +211,37 @@ Console.WriteLine($"A rész: {megye.MegyeNev}-{f1.Sum(l => l.Lakossag)}");
 
 var f2 = varosok.OrderByDescending(v => v.Szelesseg).FirstOrDefault();
 Console.WriteLine($"B rész: {f2.Telepules}");
+
+// 2. task (c part) ------------------------------------------------------------------------------------------------------------------------------------
+
+var f3 = varosok.Where(k => k.SZTav <= 50 && k.KTav <= 50).Count();
+Console.WriteLine($"C rész: {f3}");
+
+// 2. task (d part) ------------------------------------------------------------------------------------------------------------------------------------
+
+var f4 = varosok.Where(x => x.Szelesseg >= 47.3 && x.Szelesseg <= 47.4).OrderBy(x => x.Hosszusag).ToList();
+
+string output = string.Empty;
+double maxTeruletK = double.MinValue;
+
+for (int i = 0; i < f4.Count - 1; i++)
+{
+    double teruletK = Math.Abs(f4[i].Terulet - f4[i + 1].Terulet);
+    if (teruletK > maxTeruletK)
+    {
+        maxTeruletK = teruletK;
+        output = $"{f4[i].Telepules}-{f4[i+1].Telepules}-{maxTeruletK:f2}";
+    }
+}
+
+Console.WriteLine($"D rész: {output}");
+
+// 2. task (e part) ------------------------------------------------------------------------------------------------------------------------------------
+
+var f5 = varosok.Where(x => x.Telepules.ToLower().Contains("buda")).OrderBy(x => x.Hosszusag).Skip(2).First();
+Console.WriteLine($"E rész: {f5.Telepules}");
+
+// 2. task (e part) ------------------------------------------------------------------------------------------------------------------------------------
+
+var f6 = varosok.Where(x => x.aetOrder).Count();
+Console.WriteLine($"F rész: {f6}");
