@@ -1,6 +1,6 @@
 ﻿Console.ForegroundColor = ConsoleColor.Green;
 
-const string DIR = "H:\\c#\\cli\\NJEGAMF24\\";
+const string DIR = "H:\\asztali\\NJEGAMF\\";
 
 Console.WriteLine("1. feladat: ");
 

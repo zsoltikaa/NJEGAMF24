@@ -1,6 +1,6 @@
 ﻿Console.ForegroundColor = ConsoleColor.Green;
 
-const string DIR = "H:\\c#\\cli\\NJEGAMF24\\";
+const string DIR = "H:\\asztali\\NJEGAMF\\";
 
 Console.WriteLine("1. feladat: \n");
 
@@ -114,9 +114,41 @@ foreach (var game in games)
     fe1 += game.DidWhiteWin ? 'v' : 's';
 }
 
-Console.WriteLine($"A rész: {fe1}");
+Console.WriteLine($"A rész: {fe1}\n");
 
 // 2. task (b part) --------------------------------------------------------------------------------------------------------------------------------------------------
 
 var fe2 = games.Sum(x => x.KnightMoves);
-Console.WriteLine($"B rész: {fe2}");
+Console.WriteLine($"B rész: {fe2}\n");
+
+// 2. task (c part) --------------------------------------------------------------------------------------------------------------------------------------------------
+
+string result = string.Empty;
+
+for (int i = 0; i < games.Count; i++)
+{
+    if (games[i].DidQueenDie)
+    {
+        result += $"{i+1};";
+    }
+}
+
+Console.WriteLine($"C rész: {result.TrimEnd(';')}\n");
+
+// 2. task (d part) --------------------------------------------------------------------------------------------------------------------------------------------------
+
+Console.WriteLine($"D rész: {games.Sum(x => x.QueenMoves)}\n");
+
+// 2. task (e part) --------------------------------------------------------------------------------------------------------------------------------------------------
+
+int count = 0;
+foreach (var game in games)
+{
+    count += game.Moves.Where((_, i) => i % 2 == 0).Count(x => x.StartsWith('K') || x.StartsWith('O')) == 0 ? 1 : 0;
+}
+
+Console.WriteLine($"E rész: {count}\n");
+
+// 2. task (f part) --------------------------------------------------------------------------------------------------------------------------------------------------
+
+Console.WriteLine($"F rész: {games.Count(x => x.RemainingPieces > 20)}");
