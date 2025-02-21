@@ -1,6 +1,4 @@
-﻿using static System.Runtime.InteropServices.JavaScript.JSType;
-
-Console.ForegroundColor = ConsoleColor.Green;
+﻿Console.ForegroundColor = ConsoleColor.Green;
 
 const string DIR = "H:\\c#\\cli\\NJEGAMF24\\";
 
@@ -95,4 +93,30 @@ Console.WriteLine($"C rész: {f3(11, 31)}");
 
 Console.WriteLine("\n-------------------------------------------------------------------------------------------------------\n");
 
-Console.WriteLine("2. feladat: ");
+Console.WriteLine("2. feladat: \n");
+
+List<Game> games = [];
+
+using (StreamReader reader = new($"{DIR}jatszmak.txt"))
+{
+
+    while (!reader.EndOfStream)
+    {
+        games.Add(new(reader.ReadLine()));
+    }
+
+}
+
+var fe1 = string.Empty;
+
+foreach (var game in games)
+{
+    fe1 += game.DidWhiteWin ? 'v' : 's';
+}
+
+Console.WriteLine($"A rész: {fe1}");
+
+// 2. task (b part) --------------------------------------------------------------------------------------------------------------------------------------------------
+
+var fe2 = games.Sum(x => x.KnightMoves);
+Console.WriteLine($"B rész: {fe2}");
