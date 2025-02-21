@@ -10,12 +10,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B963F817-FDF
 		jatszmak.txt = jatszmak.txt
 		megyek.txt = megyek.txt
 		szamok.txt = szamok.txt
+		szavak.txt = szavak.txt
 		telepules.txt = telepules.txt
+		uzenetek.txt = uzenetek.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NJEGAMF24_2_fordulo", "NJEGAMF24_2_fordulo\NJEGAMF24_2_fordulo.csproj", "{B553D0E7-6E9C-4E99-A25E-BA27FB79CE82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NJEGAMF24_2_fordulo", "NJEGAMF24_2_fordulo\NJEGAMF24_2_fordulo.csproj", "{B553D0E7-6E9C-4E99-A25E-BA27FB79CE82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NJEGAMF24_3_fordulo", "NJEGAMF24_3_fordulo\NJEGAMF24_3_fordulo.csproj", "{CBB48EEA-8198-4763-8252-C118E9F363C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NJEGAMF24_3_fordulo", "NJEGAMF24_3_fordulo\NJEGAMF24_3_fordulo.csproj", "{CBB48EEA-8198-4763-8252-C118E9F363C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
