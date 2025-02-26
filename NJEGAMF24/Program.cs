@@ -241,7 +241,7 @@ Console.WriteLine($"D rész: {output}");
 var f5 = varosok.Where(x => x.Telepules.ToLower().Contains("buda")).OrderBy(x => x.Hosszusag).Skip(2).First();
 Console.WriteLine($"E rész: {f5.Telepules}");
 
-// 2. task (e part) ------------------------------------------------------------------------------------------------------------------------------------
+// 2. task (f part) ------------------------------------------------------------------------------------------------------------------------------------
 
 var f6 = varosok.Where(x => x.aetOrder).Count();
 Console.WriteLine($"F rész: {f6}");
